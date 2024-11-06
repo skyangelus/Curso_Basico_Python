@@ -238,9 +238,145 @@ print(result) # The area of a circle with radius 10 is 314
 result = 'The area of a circle with radius {} is {}'.format(radius, area) #imprime las variables "radius" y "area" con sus valores numéricos int y float respectivamente
 print(result) # The area of a circle with radius 10 is 314
 
-print("\nEjercicio 27 ****** Uso de index(): Devuelve el índice más bajo de una subcadena, los argumentos adicionales indican el índice inicial y final (el valor predeterminado es 0 y la longitud de la cadena es 1). Si no se encuentra la subcadena, genera un valueError. Es lo mismo que el metodo find() pero en lugar de devolver un -1 devuelve un error si no se encuentra\n")
+print("\nEjercicio 27 ****** Uso de index(): Devuelve el índice de la primera aparicion de una subcadena, los argumentos adicionales indican el índice inicial y final (el valor predeterminado es 0 y la longitud de la cadena es 1). Si no se encuentra la subcadena, genera un valueError. Es lo mismo que el metodo find() pero en lugar de devolver un -1 devuelve un error si no se encuentra\n")
     #index(): Devuelve el índice más bajo de una subcadena, los argumentos adicionales indican el índice inicial y final (el valor predeterminado es 0 y la longitud de la cadena es 1). Si no se encuentra la subcadena, genera un valueError.  Es lo mismo que el metodo find() pero en lugar de devolver un -1 devuelve un error si no se encuentra
 challenge = 'thirty days of python'
 sub_str = 'da'
 print(challenge.index(sub_str))
-print(challenge.index(sub_str,9)) #Error
+#print(challenge.index(sub_str,9)) #Error
+
+print("\nEjercicio 28 ****** Uso de rindex(): Devuelve el índice la ultima aparición de una subcadena, los argumentos adicionales indican el índice inicial y final (el valor predeterminado es 0 y la longitud de la cadena es 1.)Si no se encuentra la subcadena, genera un valueError. Es lo mismo que el metodo rindex() pero en lugar de devolver un -1 devuelve un error si no se encuentra\n")
+    #rindex(): Devuelve el índice más alto de una subcadena, los argumentos adicionales indican el índice inicial y final (el valor predeterminado es 0 y la longitud de la cadena es 1
+challenge = 'thirty days of python'
+sub_string = 'da'
+print(challenge.rindex(sub_string))  # 7
+#print(challenge.rindex(sub_string, 9)) # error
+print(challenge.rindex('on', 8)) # 19
+
+print("\nEjercicio 29 ****** Uso de isalnum(): Checa que todos los caracteres de la cadena sean caracteres alfanumericos\n")
+    #isalnum(): Checa que todos los caracteres de la cadena sean caracteres alfanumericos
+challenge = 'ThirtyDaysPython'
+print(challenge.isalnum()) #Imprime "True" ya que toda la cadena 'challenge' es alfanumerico
+challenge = '30DaysPython'
+print(challenge.isalnum()) #Imprime "True" ya que toda la cadena 'challenge' es alfanumerico
+challenge = 'Thirty Days Python'
+print(challenge.isalnum()) #Imprime "False" ya que los espacios no son caracteres alfanumericos
+challenge = 'Thirty Days Python 2024' 
+print(challenge.isalnum()) #Imprime "False" ya que los espacios no son caracteres alfanumericos
+
+print("\nEjercicio 30 ****** Uso de isalpha(): Checa que todos los caracteres de la cadena sean caracteres del alfabeto (a - z and A - Z)\n")
+    #isalpha(): Checa que todos los caracteres de la cadena sean caracteres del alfabeto (a - z and A - Z)
+challenge = 'thirty days of python'
+print(challenge.isalpha()) #Imprime "Falso" ya que nuevamente los espacios no son caracteres del alfabeto
+challenge = 'ThirtyDaysOfPython'
+print(challenge.isalpha()) #Imprime "True" ya que todos los caracteres pertenecen al alfabeto y no tiene espacios
+num = '123'
+print(num.isalpha()) #Imprime "False" ya que todos los caracteres de la cadena no son alfabeticos porque son números
+challenge = '30DaysOfPython'
+print(challenge.isalpha()) #Imprime "False" ya que todos los caracteres de la cadena no son alfabeticos porque socontiene números y letras
+
+print("\nEjercicio 31 ****** Uso de isdecimal(): Checa que todos los caracteres de la cadena sean caracteres decimales (0 - 9)\n")
+    #isdecimal(): Checa que todos los caracteres de la cadena sean caracteres decimales (0 - 9)
+challenge = 'Thirty Days Of Python'
+print(challenge.isdecimal()) #Imprime "False" ya que la cadena no contiene ningún número
+challenge = '123'
+print(challenge.isdecimal()) #Imprime "True" ya que la cadena tiene solo caracteres numéricos
+challenge = '\u00B2'
+print(challenge.isalnum()) #Imprime "False" ya que la cadena tiene tanto numeros como caracteres alfanumericos. No contiene solo números
+challenge = '12 3'
+print(challenge.isalnum()) #Imprime "False" ya que los espacios no son números
+
+print("\nEjercicio 32 ****** Uso de isdigit(): Comprueba si todos los caracteres de una cadena son números (0-9 y algunos otros caracteres Unicode para números)\n")
+    #isdigit(): Comprueba si todos los caracteres de una cadena son números (0-9 y algunos otros caracteres Unicode para números)
+challenge = 'Thirty'
+print(challenge.isdigit()) #Imprime "False" ya que son solo caracteres alfabeticos y no contiene números
+challenge = '30'
+print(challenge.isdigit()) #Imprime "True" ya que la cadena contiene números
+challenge = '\u00B2'
+print(challenge.isdigit()) #Imprime "True" ya que la cadena contiene números y caracteres UNICODE
+
+print("\nEjercicio 33 ****** Uso de isnumeric(): Comprueba si todos los caracteres de una cadena son números o están relacionados con números (al igual que isdigit(), solo acepta más símbolos, como ½)\n")
+    #isnumeric(): Comprueba si todos los caracteres de una cadena son números o están relacionados con números (al igual que isdigit(), solo acepta más símbolos, como ½)
+challenge = '10'
+print(challenge.isnumeric()) #Imprime "True" ya que la cadena contiene números
+challenge = '\u00BD' #caracter unicode correspondiente a ½
+print(challenge.isnumeric()) #Imprime "True" ya que es el código de un caracter UNICODE
+challenge = '10.5'
+print(challenge.isnumeric()) #Imprime "False" y que la cadena contiene un número flotante con punto decimal y eso no es un caracter UNICODE
+
+print("\nEjercicio 34 ****** Uso de isidentifier(): Comprueba para un identificador valido - verifica que si una cadena es un nombre valido de variable)\n")
+    #isidentifier(): Comprueba para un identificador valido - verifica que si una cadena es un nombre valido de variable
+challenge = '30DaysOfPython'
+print(challenge.isidentifier()) #Imprime "False" ya que el la cadena inicia con un número y no es apto para el nombre de una variable
+challenge = 'thirty_days_of_python'
+print(challenge.isidentifier()) #Imprime "True" ya que la cadena, cumple con las caracteristicas de nombre valido de una variable
+
+print("\nEjercicio 35 ****** Uso de islower(): Comprueba si todos los caracteres alfabéticos de la cadena están en minúsculas\n")
+    #islower(): Comprueba si todos los caracteres alfabéticos de la cadena están en minúsculas
+challenge = 'thirty days of python'
+print(challenge.islower()) #Imprime "True" ya que todos los caracteres de la cadena son minusculas
+challenge = 'THIRTY DAYS OF PYTHON'
+print(challenge.islower()) #Imprime "False" ya que todos los caracteres de la cadena son mayusculas
+challenge = 'Thirty Days Of Python'
+print(challenge.islower()) #Imprime "False" ya que algunos de los caracteres de la cadena son mayusculas y otros minusculas
+challenge = '30 days of python'
+print(challenge.islower()) #Imprime "True" ya que acepta los caracteres numéricos y solo cuenta los caracteres alabeticos en minusculas
+
+print("\nEjercicio 36 ****** Uso de isupper(): Comprueba si todos los caracteres alfabéticos de la cadena están en MAYUSCULAS\n")
+    #isupper(): Comprueba si todos los caracteres alfabéticos de la cadena están en MAYUSCULAS
+challenge = 'thirty days of python'
+print(challenge.isupper()) #Imprime "False" ya que todos los caracteres de la cadena son minusculas
+challenge = 'THIRTY DAYS OF PYTHON'
+print(challenge.isupper()) #Imprime "True" ya que todos los caracteres de la cadena son MAYUSCULAS
+challenge = 'Thirty Days Of Python'
+print(challenge.isupper()) #Imprime "False" ya que algunos de los caracteres de la cadena son mayusculas y otros minusculas
+challenge = '30 DAYS OF PYTHON'
+print(challenge.isupper()) #Imprime "True" ya que acepta los caracteres numéricos y solo cuenta los caracteres alabeticos en MAYUSCULAS
+
+print("\nEjercicio 37 ****** Uso de join(): Regresa una cadena concatenada\n")
+    #join(): Regresa una cadena concatenada
+web_tech = ['HTML','CSS','JavaScript','React']
+result = ' '.join(web_tech) #Hace la concatenación y lo guarda en una variable "result" y le agrega un espacio al final de cada elemento del Array, ecepto al ultimo elemento
+print(web_tech) #imprime el Array tal cual ['HTML', 'CSS', 'JavaScript', 'React']
+print(result) #Ya con el Join, hace la concatenación e imprime HTML CSS JavaScript React
+
+web_tech = ['HTML', 'CSS', 'JavaScript', 'React']
+result = '# '.join(web_tech) #Hace la concatenación y lo guarda en una variable "result" y le agrega el caracter # y un espacio al final de cada elemento del Array, excepto al ultimo elemento
+print(result) #Ya con el join, hae la concatenación y le agrega # y un espacio. HTML# CSS# JavaScript# React
+
+print("\nEjercicio 38 ****** Uso de strip(): Elimina todos los caracteres dados comenzando desde el principio y el final de la cadena.\n")
+    #strip(): Elimina todos los caracteres dados comenzando desde el principio y el final de la cadena.
+challenge = 'thirty days of pythoonnn'
+print(challenge.strip('noth')) #Del contenido de la cadena "challenge", elimina todas las letras n, o, t y h. Sí hace distinción entre minusculas y mayusculas, así que hay que especificar si queremos eliminar las letras en minusculas o mayusculas. Así que imprime: "irty days of py"
+
+print("\nEjercicio 39 ****** Uso de replace(): Reemplaza la subcadena con una cadena dada.\n")
+    #replace(): Elimina todos los caracteres dados comenzando desde el principio y el final de la cadena.
+challenge = 'thirty days of python'
+print(challenge.replace('python','coding')) #En el contenido de la cadena "challenge", reemplaza la palabra "python" por "coding". Entonces imprime lo siguiente: "thirty days of coding"
+
+print("\nEjercicio 40 ****** Uso de split(): Divide la cadena, usando una cadena o espacio dado como separador.\n")
+    #split(): Divide la cadena, usando una cadena o espacio dado como separador.
+challenge = 'thirty days of python'
+print(challenge.split()) #Imprime el contenido separandolo como si fuera un array: ['thirty', 'days', 'of', 'python']
+challenge = 'thirty, days, of, python'
+print(challenge.split(', ')) #Imprime el contenido de la cadena, pero elimina la coma y el espacio, así que imprime como en el anterior ['thirty', 'days', 'of', 'python']
+
+print("\nEjercicio 41 ****** Uso de title(): Devuelve una cadena de título en mayúsculas y minúsculas.\n")
+    #split(): Devuelve una cadena de título en mayúsculas y minúsculas.
+challenge = 'thirty days of python'
+print(challenge.title()) #Imprime el contenido de la cadena "challenge" pero con la primera letra de cada palabra en mayuscula. Imprime = "Thirty Days Of Python"
+
+print("\nEjercicio 42 ****** Uso de swapcase(): Convierte todos los caracteres en mayúsculas a minúsculas y todos los caracteres en minúsculas a mayúsculas.\n")
+    #swapcase(): Convierte todos los caracteres en mayúsculas a minúsculas y todos los caracteres en minúsculas a mayúsculas.
+challenge = 'thirty days of python'
+print(challenge.swapcase()) #Como todo el contenido de la cadena "challenge" son minusculas, entonces imprime: "THIRTY DAYS OF PYTHON"
+challenge = 'Thirty Days Of Python'
+print(challenge.swapcase()) #Convierte el contenido de la cadena "challenge" las mayusculas a minusculas y las minisculas a mayusculas, así que imprime: "tHIRTY dAYS oF pYTHON"
+
+print("\nEjercicio 43 ****** Uso de startswith(): Comprueba si la cadena comienza con la cadena especificada.\n")
+    #startswith(): Comprueba si la cadena comienza con la cadena especificada.
+challenge = 'thirty days of python'
+print(challenge.startswith('thirty')) #Comprueba si el contenido de la cadena "challenge" comienza con la subcadena "thirty". Así que imprime: "True"
+print(challenge.startswith('Thirty')) #Comprueba si el contenido de la cadena "challenge" comienza con la subcadena "Thirty". Así que imprime: "False" ya que la primera T no es mayuscula en "Challege"
+challenge = '30 days of python'
+print(challenge.startswith('thirty')) #Comprueba si el contenido de la cadena "challenge" comienza con la subcadena "thirty". Así que imprime: "False" ya que "challenge" comienza con "30" en número
