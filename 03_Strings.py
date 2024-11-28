@@ -146,7 +146,7 @@ En Python podemos segmentar cadenas en subcadenas
 '''
 print("\nEjercicio 17 ************************************************************\n")
 language = 'Python'
-first_three = language[0:3] #Inicia en el caracter con indice 0 y sube hasta caracter con el indice 3, pero no incuye, ni guarda el caracter de la posición 3
+first_three = language[0:3] #Inicia en el caracter con indice 0 y sube hasta caracter con el indice 3, pero no incluye, ni guarda el caracter de la posición 3
 print(first_three) #Imprime "Pyt"
 last_three = language[3:6] #Inicia en el caracter con indice 3 y sube hasta caracter con el indice 6 (que esta vacio), pero no incuye, ni guarda el caracter de la posición 6 (que esta vacio)
 print(last_three) #Imprime "hon"
@@ -173,7 +173,7 @@ Es posible omitir caracteres durante la segmentación pasando el argumento de pa
 '''
 print("\nEjercicio 19 ************************************************************\n")
 language = 'Python'
-skip_and_slice = language[0:6:2] # 0 indica el indice del caracter en donde inicia "P", el 6 indica la longitud de la cadena de caracteres y el 2 indica cada cuantos caracteres deltro de la cadena imprimira P[0] Se imprime, y[1] no se imprime, t[2] Se imprime, h[3] no se imprime, o[4] se imprime y n[5] no se imprime.
+skip_and_slice = language[0:6:2] # 0 indica el indice del caracter en donde inicia "P", el 6 indica la longitud de la cadena de caracteres y el 2 indica cada cuantos caracteres dentro de la cadena imprimira P[0] Se imprime, y[1] no se imprime, t[2] Se imprime, h[3] no se imprime, o[4] se imprime y n[5] no se imprime.
 print(skip_and_slice) #Pint "Pto"
 
 #Metodos String--------------------------------------------------------------------------------------------------------------------------------------------------------
